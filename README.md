@@ -1,25 +1,25 @@
-# maven-slf4j-lib-starter [![ci](https://github.com/daggerok/maven-slf4j-lib-starter-java-21/actions/workflows/ci.yml/badge.svg)](https://github.com/daggerok/maven-slf4j-lib-starter-java-21/actions/workflows/ci.yml)
-Maven library project starter using maven wrapper, slf4j, assertj and java 21 (tested on Zulu and GraalVM)
+# maven-slf4j-lib-starter [![ci](https://github.com/daggerok/maven-slf4j-lib-starter-java-24/actions/workflows/ci.yml/badge.svg)](https://github.com/daggerok/maven-slf4j-lib-starter-java-24/actions/workflows/ci.yml)
+Maven library project starter using maven wrapper, slf4j, assertj and java 24 (tested on Zulu and GraalVM)
 
 ## Getting Started
 
 Create a new project
 
 ```bash
-npx --yes degit daggerok/maven-slf4j-lib-starter-java-21 my-lib && cd $_
+npx --yes degit daggerok/maven-slf4j-lib-starter-java-24 my-lib && cd $_
 ```
 
 ## Setup Development Environment
 
-Install Java 21
+Install Java 24
 
 ```bash
-brew reinstall zulu@21 # graalvm@21
+brew reinstall zulu@24 # graalvm@24
 
 declare -f use # output:
 function use() {
 	function usage() {
-		echo "Usage:\n\tuse jdk 1.8\nor:\n\tuse graalvm 21"
+		echo "Usage:\n\tuse jdk 1.8\nor:\n\tuse graalvm 24"
 		return
 	}
 	if [[ $# -eq 0 ]] ; then
@@ -32,9 +32,9 @@ function use() {
 			usage
 			return -2
 		fi
-		export JAVA_VERSION=${2:-21}
+		export JAVA_VERSION=${2:-24}
 	else
-		export JAVA_VERSION=${1:-21}
+		export JAVA_VERSION=${1:-24}
 	fi
 	if [[ "graalvm" == "$USE_WHAT" ]] ; then
 		export JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-$JAVA_VERSION.jdk/Contents/Home
@@ -49,6 +49,6 @@ function use() {
 ## Test
 
 ```bash
-use zulu 21 ; java -version
+use zulu 24 ; java -version
 ./mvnw clean ; ./mvnw
 ```
